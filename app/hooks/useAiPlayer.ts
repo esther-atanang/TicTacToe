@@ -15,7 +15,7 @@ const useAiPlayer = ({
     if (!changed) {
       if (nextMove === aiPlayer) {
         let futureBoard = [...boardState];
-        if (boardState.every((val) => typeof val === "number")) {
+        if (boardState.every((val:number) => typeof val === "number")) {
           futureBoard[Math.floor(Math.random() * futureBoard.length)] =
             aiPlayer;
         } else {
@@ -47,7 +47,7 @@ const useAiPlayer = ({
     return () => {
       changed = true;
     };
-  }, [boardState, nextMove]);
+  }, [boardState, nextMove, aiPlayer, huPlayer, setBoardState, setNextMove, CPUDecision]);
 };
 
 export default useAiPlayer;

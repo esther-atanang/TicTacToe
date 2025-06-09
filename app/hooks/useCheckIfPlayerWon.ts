@@ -56,7 +56,7 @@ const useCheckIfPlayerWon = ({
     return () => {
       checked = true;
     };
-  }, [boardState, nextMove]);
+  }, [boardState, nextMove, aiPlayer,huPlayer,player2Mark, playerOne, playerWon, score.player2,score.ties,score.you]);
 };
 
 export default useCheckIfPlayerWon;

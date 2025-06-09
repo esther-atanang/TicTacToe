@@ -16,7 +16,7 @@ const PickPlayerMarkDisplay = ({ setPlayerMark }: any) => {
       {/**First section */}
       <div>
         <p className="font-semibold text-lg md:text-xl tracking-widest">
-          pick player 1's mark
+          pick player 1&apos;s mark
         </p>
       </div>
       {/**Second section */}
