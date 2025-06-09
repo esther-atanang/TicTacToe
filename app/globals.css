@@ -2,28 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --light-blue: 49 195 189;
+    --light-blue-hover: 101 233 228;
+    --light-yellow: 242 177 55;
+    --yellow-border: 204 139 19;
+    --blue-border: 17 140 135;
+    --light-yellow-hover: 255 200 96;
+    --navy: 16 33 42;
+    --navy-hover: 33 49 58;
+    --dark-navy: 26 42 51;
+    --semi-dark-navy: 31 54 65;
+    --silver: 168 191 201;
+    --siver-hover: 219 232 237;
+    --Overlay: 0 0 0;
+    --silver-border-color: 151 151 151;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  body {
+    @apply bg-main overflow-hidden;
+  }
 }
 
 @layer utilities {
