@@ -3,9 +3,9 @@ import SquareBoard from "../_ui/game/gameBoard";
 import DescriptionBoard from "../_ui/game/descriptionBoard";
 import ScoreBoard, { score } from "../_ui/game/scoreBoard";
 import PopUpMenu from "../_ui/game/popUpMenu";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
-import { CPUDecision, playerWon } from "../lib/action";
+import { CPUDecision as _CPUDecision, playerWon as _playerWon } from "../lib/action";
 import useCheckIfPlayerWon from "../hooks/useCheckIfPlayerWon";
 import useAiPlayer from "../hooks/useAiPlayer";
 
@@ -19,6 +19,8 @@ const Game = () => {
   const [boardState, setBoardState] = useState<(number | string)[]>([
     0, 1, 2, 3, 4, 5, 6, 7, 8,
   ]);
+    const CPUDecision = useCallback(_CPUDecision,[]);
+    const playerWon = useCallback(_playerWon,[]);
 
   //This is just a test run
   const searchParams = useSearchParams();

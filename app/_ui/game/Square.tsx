@@ -35,7 +35,7 @@ const Square: React.FC<ISquare> = ({
   setNextMove,
 }) => {
   const [hoverMark, setHoverMark] = useState(false);
-
+ 
   const handleClick = (position: number) => {
     let currentMove = nextMove;
     if (currentMove === playerMark || player2Mark) {
@@ -78,7 +78,7 @@ const Square: React.FC<ISquare> = ({
         setHoverMark(false);
       }}
       className="bg-boardColor flex items-center h-full justify-center rounded-[1.1rem] border-b-8 border-borderColor cursor-pointer "
-      disabled={won.length > 0 ? true : false}
+      disabled={(won.length > 0 || cpuMark && (cpuMark === nextMove)) ? true : false}
     >
       {mark && !won.includes(position) && (
         <Image

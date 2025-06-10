@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 const useAiPlayer = ({
   boardState,
@@ -10,6 +10,7 @@ const useAiPlayer = ({
   setNextMove,
 }: any) => {
   //Ai player
+
   useEffect(() => {
     let changed = false;
     if (!changed) {
